@@ -20,7 +20,7 @@ def newSensor():
 @app.route('/sensors/<int:Id>', methods=["PUT"])
 def updateSensor(Id):
     eintrag = next((s for s in liste_von_sensoren if s['Id'] == Id), None)
-    daten = request.json;
+    daten = request.json
     eintrag['Name'] = daten.get('Name', eintrag['Name'])
     eintrag['Sensortyp'] = daten.get('Sensortyp', eintrag['Sensortyp'])
     eintrag['Messwert'] = daten.get('Messwert', eintrag['Messwert'])
